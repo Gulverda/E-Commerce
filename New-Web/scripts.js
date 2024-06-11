@@ -9,62 +9,51 @@ document.addEventListener('DOMContentLoaded', function () {
     const createAccountBtnLogin = document.getElementById('createAccountBtnLogin');
     const iGotAccountBtn = document.getElementById('iGotAccountBtn');
 
-    // Function to show modal
     function showModal(modal) {
         modal.style.display = 'flex';
     }
 
-    // Function to hide modal
     function hideModal(modal) {
         modal.style.display = 'none';
     }
 
-    // Event listener for showing registration modal
     showRegistrationBtn.addEventListener('click', function () {
         hideModal(registrationModal);
-        showModal(loginModal); // Show sign-in modal by default when registration button is clicked
+        showModal(loginModal); 
     });
 
-    // Event listener for closing registration modal
     document.getElementById('closeRegistration').addEventListener('click', function () {
         hideModal(registrationModal);
     });
 
-    // Event listener for closing login modal
     document.getElementById('closeLogin').addEventListener('click', function() {
         hideModal(loginModal);
     });
 
-    // Event listener for closing signup modal
     document.getElementById('closeSignup').addEventListener('click', function() {
         hideModal(signupModal);
     });
 
-    // Event listener for showing login modal inside registration modal
     showLoginInsideBtn.addEventListener('click', function () {
         hideModal(registrationModal);
         showModal(loginModal);
     });
 
-    // Event listener for showing signup modal inside registration modal
     showSignupInsideBtn.addEventListener('click', function () {
         hideModal(registrationModal);
         showModal(signupModal);
     });
 
-    // Event listener for "Create Account" button inside login modal
     createAccountBtnLogin.addEventListener('click', function () {
         hideModal(loginModal);
         showModal(signupModal);
     });
 
-    // Event listener for "I got Account" button inside signup modal
     iGotAccountBtn.addEventListener('click', function () {
         hideModal(signupModal);
         showModal(loginModal);
     });
 
-    // Close modal when clicking outside of it
     window.addEventListener('click', function(event) {
         if (event.target === loginModal) {
             hideModal(loginModal);
@@ -74,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Validation for signup form
     document.getElementById('signupForm').addEventListener('submit', function(event) {
         const password = event.target.password.value;
         if (password.length < 6) {
@@ -83,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Validation for login form
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         const username = event.target.username.value;
         const password = event.target.password.value;

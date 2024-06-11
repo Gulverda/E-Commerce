@@ -4,11 +4,9 @@ $(document).ready(function(){
         var i = $(this).index();
         var targetElement = $(".testimonial .tabs li");
         
-        // Activate the clicked indicator
         targetElement.eq(i).addClass('active');
         targetElement.not(targetElement[i]).removeClass('active');
         
-        // Update the carousel to the corresponding slide
         $('#carouselExampleIndicators').carousel(i);
     });
 
@@ -21,7 +19,6 @@ $(document).ready(function(){
         targetElement.eq(i).addClass('active');
         targetElement.not($(this)).removeClass('active');
         
-        // Update the carousel to the corresponding slide
         $('#carouselExampleIndicators').carousel(i);
     });
 
