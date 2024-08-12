@@ -31,7 +31,7 @@ $(document).ready(function(){
     function showModal() {
         var modal = document.getElementById("testimonialCustomModal");
         modal.classList.add("show");
-        modal.style.display = "block";
+        modal.style.display = "flex";
         var backdrop = document.createElement("div");
         backdrop.classList.add("modal-backdrop", "fade", "show");
         document.body.appendChild(backdrop);
